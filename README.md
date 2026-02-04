@@ -1,6 +1,3 @@
-![](https://github-readme-stats.vercel.app/api?username=leahdykema&theme=dark&hide_border=true&include_all_commits=true&count_private=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=leahdykema&theme=dark&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=leahdykema&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact)
 # About Me:
 🔭 I’m currently working on a free customizable AAC communication service for the non-verbal and a custom bio link for https://leahdykema.us<br>💬 Ask me about anything  product related!<br>⚡ Fun fact, I'm not only a web developer, I'm also an artist ;)<br/><br/>
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E) ![Affinity Designer](https://img.shields.io/badge/affinity%20desginer-%231B72BE.svg?style=flat&logo=affinity-designer&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=flat&logo=Canva&logoColor=white)<br/>

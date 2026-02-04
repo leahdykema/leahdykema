@@ -1,0 +1,170 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: auto;
+    padding: 30px;
+    max-width: 500px
+}
+
+header {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#banner {
+    background-image: url("img/collection-2025.PNG");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border: solid 1px #444;
+    border-radius: 20px;
+}
+
+#portrait {
+    position: relative;
+    top: -40px;
+    left: 35%;
+    right: 35%;
+    width: 30%;
+    border: solid 1px #fff;
+    border-radius: 100%;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+header p {
+    text-align: center;
+}
+
+nav.links {
+    display: block;
+    margin: auto;
+    padding: auto;
+    list-style: none;
+}
+
+ul.header-links,
+ul.footer-links {
+    display: flex;
+    margin: 20px auto;
+    padding: auto;
+    padding-inline-start: 0;
+    position: relative;
+    list-style: none;
+}
+
+li {
+    margin: auto;
+    list-style: none;
+    text-decoration: none;
+}
+
+.Icon {
+    list-style: none;
+    height: 60px;
+}
+
+.social-links,
+ul.links {
+    margin: auto;
+    padding-inline-start: 0;
+    max-width: 500px;
+}
+
+.social-links li,
+ul.links li {
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 300ms ease;
+}
+
+.social-links li h3,
+ul.links li h3 {
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+    padding-right: 15%;
+}
+
+.social-links li a,
+ul.links li a {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+}
+
+.social-links li a img,
+ul.links li a img {
+    background: none;
+    left: 10px;
+}
+
+@media (hover: hover) {
+    ul.social-links li:focus,
+    ul.social-links li:hover,
+    ul.links li:focus,
+    ul.links li:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #eee;
+        color: #000;
+    }
+
+    header {
+        background-color: #ddd;
+        border: solid 1px #ccc;
+    }
+
+    .social-links li,
+    ul.links li {
+        background-color: #ddd;
+        border: solid 2px #aaa;
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111;
+        color: #fff;
+    }
+
+    header {
+        background-color: #222;
+        border: solid 1px #444;
+    }
+
+    .social-links li,
+    ul.links li {
+        background-color: #222;
+        border: solid 2px #555;
+    }
+
+    .Icon {
+        filter: invert();
+    }
+}
