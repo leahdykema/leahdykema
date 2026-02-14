@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: 404.html
+Disallow: events/grad-2026/RSVP/index.html
 Allow: /
 
 Sitemap: https://leahdykema.us/sitemap.xml

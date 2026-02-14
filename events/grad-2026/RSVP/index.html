@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Leah Dykema">
+        <meta name="description" content="">
+        <meta name="theme-color" content="#eee" id="theme-color-meta">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:image" name="image" content="/img/leah-apple-jordan-creek.jpg">
+        <meta property="og:title" content="RSVP">
+        <meta property="og:description" content="">
+        <meta property="og:url" content="https://leahdykema.us/events/grad-2026/RSVP/index.html">
+        <meta property="og:type" content="website">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/x-icon" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="/img/leah-apple-jordan-creek.jpg">
+        <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/img/leah-apple-jordan-creek.jpg">
+        <meta name="robots" content="noindex, nofollow">
+        <title>RSVP</title>
+        <link rel="stylesheet" href="/RSVP.css">
+        <link rel="stylesheet" href="https://iaccessabilityservices.com/stylesheets/accessibility.css">
+    </head>
+    <body>
+        <!-- Services Form -->
+        <main class="site">
+            <h2>RSVP</h2>
+            <div class="form">
+                <form name="RSVP" id="RSVP">
+                    <div class="form-row">
+                        <label>Name&#40;s&#41;&#58;</label>
+                        <input type="text" name="Names" id="names" required placeholder="John Appleseed, John Smith, and John Doe" tabindex="0">
+                    </div>
+                    <div class="form-row" style="display: block;">
+                        <div class="form-row">
+                            <label>Email&#58;</label>
+                            <input type="email" name="Email Address" id="email" required placeholder="john@example.com" tabindex="0">
+                        </div>
+                        <p style="display: block; margin: auto 5%; opacity: 70%;">Email Addresses are used to confirm your response and are discarded after sending you a comfirmation email&#46;</p>
+                    </div>
+                    <div class="form-row">
+                        <label for="attending">Attending</label>
+                        <select name="Attending" id="attending">
+                            <option selected disabled>Are you attending?</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="timestamp" id="timestamp" aria-hidden="true">
+                    <button class="submit" type="submit" tabindex="3">
+                        RSVP
+                    </button>
+                </form>
+            </div>
+            <br>
+            <footer>
+                <p class="info">For any questions or concerns&#44; please contact <a class="links" href="mailto:contact@leahdykema.us?subject=RSVP" tabindex="0">contact&#64;leahdykema&#46;us</a></p>
+            </footer>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            const scriptURL = "https://script.google.com/macros/s/AKfycbwgh27cE6vqfUJNdCTvdshYKsYx9DI7Y_bM1JR9Kgg_82tCeIXROxcVaetTtp7zoPbU/exec";
+            const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const form = document.forms["RSVP"];
+            const submitButton = form.querySelector('button[type="submit"]');
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                submitButton.disabled = true;
+                const now = new Date();
+                const optionsTime = {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true,
+                    timeZone: 'America/Chicago'
+                };
+                const optionsDate = {
+                    month: 'numeric',
+                    day: 'numeric',
+                    year: 'numeric',
+                    timeZone: 'America/Chicago'
+                };
+                document.getElementById("timestamp").value = now.toLocaleTimeString('en-US', optionsTime) + ' (CT) ' + now.toLocaleDateString('en-US', optionsDate);
+                const formData = new FormData(form);
+                const params = new URLSearchParams(formData);
+                fetch(scriptURL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: params
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.result === "success") {
+                        Swal.fire({
+                            title: "Done",
+                            text: "Submitted Successfully.",
+                            icon: "success",
+                            background: isDark ? "#222" : "#fff",
+                            color: isDark ? "#eee" : "#000",
+                            confirmButtonColor: isDark ? "#4da3ff" : "#0063cc",
+                            customClass: { icon: 'custom-success-icon' }
+                        });
+                        form.reset();
+                        submitButton.disabled = false;
+                    } else {
+                        throw new Error("Submission failed");
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: "Something went wrong. Please try again!",
+                        icon: "error",
+                        background: isDark ? "#222" : "#fff",
+                        color: isDark ? "#eee" : "#000",
+                        confirmButtonColor: isDark ? "#4da3ff" : "#0063cc"
+                    });
+                    submitButton.disabled = false;
+                });
+            });
+        </script>
+        <script src="https://iaccessabilityservices.com/javascript/screen-reader-support.js"></script>
+        <script src="https://iaccessabilityservices.com/javascript/pwa.js"></script>
+        <script src="https://iaccessabilityservices.com/javascript/dyslexic.js"></script>
+    </body>
+</html>
