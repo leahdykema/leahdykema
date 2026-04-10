@@ -32,12 +32,14 @@
     <body>
         <!-- Services Form -->
         <main class="site">
-            <h2>RSVP</h2>
+            <h2>RSVP to Leah&#39;s Graduation Party</h2>
             <div class="form">
                 <form name="RSVP" id="RSVP">
-                    <div class="form-row">
-                        <label>Name&#40;s&#41;&#58;</label>
-                        <input type="text" name="Names" id="names" required placeholder="John Appleseed, John Smith, and John Doe" tabindex="0">
+                    <div class="form-row" style="display: block;">
+                        <div class="form-row">
+                            <label>Name&#40;s&#41;&#58;</label>
+                            <input type="text" name="Names" id="names" required placeholder="John Appleseed, John Smith, and John Doe" tabindex="0">
+                        </div>
                         <p style="display: block; margin: auto 5%; opacity: 70%;">List the names of those attending or those not attending&#46;</p>
                     </div>
                     <div class="form-row" style="display: block;">
@@ -47,13 +49,15 @@
                         </div>
                         <p style="display: block; margin: auto 5%; opacity: 70%;">Email Addresses are used to confirm your response and are discarded after sending you a comfirmation email&#46;</p>
                     </div>
-                    <div class="form-row">
-                        <label for="attending">Attending</label>
-                        <select name="Attending" id="attending" required>
-                            <option selected disabled>Are you attending?</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
+                    <div class="form-row" style="display: block;">
+                        <div class="form-row">
+                            <label for="attending">Attending</label>
+                            <select name="Attending" id="attending" required>
+                                <option selected disabled>Are you attending?</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
                         <p style="display: block; margin: auto 5%; opacity: 70%;">The answer to this question will account for all of those listed in the Name&#40;s&#41; list from above&#46;</p>
                     </div>
                     <input type="hidden" name="timestamp" id="timestamp" aria-hidden="true">
