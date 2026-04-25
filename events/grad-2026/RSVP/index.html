@@ -61,7 +61,7 @@
                         <p style="display: block; margin: auto 5%; opacity: 70%;">The answer to this question will account for all of those listed in the Name&#40;s&#41; list from above&#46;</p>
                     </div>
                     <input type="hidden" name="timestamp" id="timestamp" aria-hidden="true">
-                    <button class="submit" type="submit" tabindex="0">
+                    <button class="submit" id="submit" type="submit" tabindex="0">
                         RSVP
                     </button>
                 </form>
@@ -80,6 +80,8 @@
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
                 submitButton.disabled = true;
+                submitButton.innerText = "Submitting...";
+                submitButton.style.cursor = "not-allowed";
                 const now = new Date();
                 const optionsTime = {
                     hour: 'numeric',
@@ -115,6 +117,8 @@
                         });
                         form.reset();
                         submitButton.disabled = false;
+                        submitButton.innerText = "RSVP";
+                        submitButton.style.cursor = "pointer";
                     } else {
                         throw new Error("Submission failed");
                     }
@@ -129,6 +133,8 @@
                         confirmButtonColor: isDark ? "#4da3ff" : "#0063cc"
                     });
                     submitButton.disabled = false;
+                    submitButton.innerText = "RSVP";
+                    submitButton.style.cursor = "pointer";
                 });
             });
         </script>
