@@ -1,0 +1,258 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+main {
+    margin-top: 10em;
+}
+
+img#cartooncreations {
+    margin: auto;
+    display: block;
+    height: 5em;
+}
+
+h1 {
+    font-family: Times;
+    text-align: center;
+}
+
+h2 {
+    padding-top: 1em;
+    margin: auto 4em;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 2em;
+}
+
+p {
+    margin-top: 0.5em;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: all 400ms ease;
+    will-change: transform;
+}
+
+nav.hidden {
+    transform: translateY(-100%);
+}
+
+nav a {
+    padding: 1em;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: all 200ms ease;
+}
+
+video {
+    transition: all 200ms ease;
+}
+
+video:hover,
+video:focus {
+    transform: scale(1.1);
+}
+
+#modalCover {
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+}
+
+div.videos {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    gap: 1em;
+}
+
+.onSiteVideo {
+    display: block;
+    margin: 1em auto;
+    width: 200px;
+    border-radius: 5%;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+    transition: all 200ms ease;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalContent {
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    transform: scale(0.90);
+    transition: all 200ms ease;
+}
+
+.modalContent button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    transition: all 200ms ease;
+}
+
+.modal.show .modalContent {
+    transform: scale(1);
+}
+
+@supports (-webkit-touch-callout: none) {
+    .modal::before {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+@media (max-width: 1000px) {
+    nav a {
+        padding: 0;
+    }
+
+    div.videos {
+        width: 100%;
+    }
+
+    .onSiteVideo {
+        margin: 1em auto;
+        width: 9.5em;
+    }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #eee;
+        color: #000;
+    }
+
+    h2 {
+        border-bottom: solid 1px rgb(0, 0, 0, 0.2);
+    }
+
+    nav {
+        background-color: #ddd;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+        color: #000;
+    }
+
+    nav a:hover,
+    nav a:focus {
+        color: #888;
+    }
+
+    video {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .modalContent {
+        background: #ddd;
+    }
+
+    .modalContent button {
+        background: #ccc;
+        color: #000;
+    }
+
+    .modalContent button:hover,
+    .modalContent button:focus {
+        background-color: #c1c1c1;
+        transform: scale(1.05);
+    }
+
+    .modalContent button:active {
+        background: #aaa;
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111;
+        color: #fff;
+    }
+
+    h2 {
+        border-bottom: solid 1px rgb(255, 255, 255, 0.2);
+    }
+
+    nav {
+        background-color: #222;
+        box-shadow: 0 4px 5px rgba(255, 255, 255, 0.1);
+    }
+
+    nav a {
+        color: #fff;
+    }
+
+    nav a:hover,
+    nav a:focus {
+        color: #aaa;
+    }
+
+    video {
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .modalContent {
+        background: #222;
+    }
+
+    .modalContent button {
+        background: #333;
+        color: #fff;
+    }
+
+    .modalContent button:hover,
+    .modalContent button:focus {
+        background-color: #3a3a3a;
+        transform: scale(1.05);
+    }
+
+    .modalContent button:active {
+        background: #444;
+    }
+}

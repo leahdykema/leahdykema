@@ -6,7 +6,6 @@ BASE_URL = "https://leahdykema.us"
 
 EXCLUDE_PATHS = {
     "404.html"
-    "events/grad-2026/RSVP/index.html"
 }
 OUTPUT_FILE = "sitemap.xml"
 
