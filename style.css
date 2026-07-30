@@ -13,6 +13,12 @@ header {
     border-radius: 20px;
 }
 
+footer {
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 50px;
+}
+
 #banner {
     background-image: url("img/collection-2026.png");
     background-size: cover;
@@ -139,6 +145,11 @@ ul.links li a img {
         border: solid 1px #ccc;
     }
 
+    footer {
+        background-color: #ddd;
+        border: solid 2px #ccc;
+    }
+
     .social-links li,
     ul.links li {
         background-color: #ddd;
@@ -156,6 +167,11 @@ ul.links li a img {
     header {
         background-color: #222;
         border: solid 1px #444;
+    }
+
+    footer {
+        background-color: #222;
+        border: solid 2px #444;
     }
 
     .social-links li,
