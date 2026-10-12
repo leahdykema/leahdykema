@@ -57,10 +57,13 @@ nav a {
     transition: all 200ms ease;
 }
 
+img,
 video {
     transition: all 200ms ease;
 }
 
+.Artwork:hover,
+.Artwork:focus,
 video:hover,
 video:focus {
     transform: scale(1.1);
@@ -73,6 +76,7 @@ video:focus {
     border-radius: 15px;
 }
 
+div.images,
 div.videos {
     margin: auto;
     display: flex;
@@ -82,11 +86,20 @@ div.videos {
     gap: 1em;
 }
 
+.Artwork,
 .onSiteVideo {
     display: block;
     margin: 1em auto;
     width: 200px;
     border-radius: 5%;
+}
+
+.Landscape {
+    height: 100px;
+}
+
+.Square {
+    height: 160px;
 }
 
 .modal {
@@ -149,10 +162,12 @@ div.videos {
         padding: 0;
     }
 
+    div.images,
     div.videos {
         width: 100%;
     }
 
+    .Artwork,
     .onSiteVideo {
         margin: 1em auto;
         width: 9.5em;
@@ -184,6 +199,7 @@ div.videos {
         color: #888;
     }
 
+    .Artwork,
     video {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
@@ -233,6 +249,7 @@ div.videos {
         color: #aaa;
     }
 
+    .Artwork,
     video {
         box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
     }
